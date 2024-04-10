@@ -51,7 +51,7 @@ class Home extends Controller
         }
     
         // Tampilkan form register jika method request adalah GET
-        return view('home/register');
+        return view('home/register/register');
     }
     
 
@@ -78,7 +78,7 @@ class Home extends Controller
         }
 
         // Tampilkan form login jika method request adalah GET
-        return view('home/login');
+        return view('home/login/login');
     }
     public function logout()
     {

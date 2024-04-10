@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/home') ?>
+<?= $this->extend('template/home') ?>
 
 <?= $this->section('content') ?>
 <!-- Bagian dengan empat gambar kursus -->
