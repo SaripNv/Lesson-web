@@ -24,9 +24,9 @@ class Home extends Controller
     }
     public function course1() {
         $data = [
-            'title' => 'Course 1',
+            'title' => 'Course',
         ];
-        return view('home/course/course1', $data);
+        return view('home/course/course1/course', $data);
     }
 
     public function register()

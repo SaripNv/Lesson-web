@@ -3,7 +3,6 @@
 <?= $this->section('content') ?>
 <!-- Bagian dengan empat gambar kursus -->
 <section>
-    <h1><?= esc($title) ?></h1>
     <div class="course-images">
         <div class="course-row">
             <div class="course-item">
