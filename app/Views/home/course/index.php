@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 <!-- Bagian dengan empat gambar kursus -->
-<section>
+<section class="course">
     <div class="course-images">
         <div class="course-row">
             <div class="course-item">
@@ -31,6 +31,10 @@
     </div>
 </section>
 <style>
+.course {
+    margin-top: 75px;
+}
+
 .course-images {
     display: flex;
     flex-direction: column;

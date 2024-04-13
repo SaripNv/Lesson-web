@@ -8,5 +8,5 @@ class LessonModel extends Model
 {
     protected $table = 'lesson';
     protected $primaryKey = 'id_lesson';
-    protected $allowedFields = ['id_course', 'judul', 'konten', 'video_url', 'sequence_number'];
+    protected $allowedFields = ['id_course', 'judul', 'file_video', 'created_at', 'updated_at'];
 }

@@ -1,8 +1,7 @@
 <?= $this->extend('template/home') ?>
 
 <?= $this->section('content') ?>
-<section>
-    <h1>Course 1 Video</h1>
+<section class="video">
     <div class="video-container">
         <video controls>
             <source src="course1_video.mp4" type="video/mp4">
@@ -12,6 +11,10 @@
 </section>
 
 <style>
+.video {
+    margin-top: 50px;
+}
+
 .video-container {
     max-width: 800px;
     margin: 0 auto;

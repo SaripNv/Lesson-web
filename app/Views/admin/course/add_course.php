@@ -1,25 +1,14 @@
-<!-- add_course.php -->
+<!-- app/Views/admin/course/add_course.php -->
 
-<!-- Extend the layout -->
 <?= $this->extend('template/dashboard') ?>
 
-<!-- Set the page title -->
-<?= $this->section('title') ?>
-Add New Course
-<?= $this->endSection() ?>
-
-<!-- Define the content section -->
 <?= $this->section('content') ?>
 <div class="container">
     <h2>Add New Course</h2>
-    <form action="<?= base_url('admin/save_course') ?>" method="post">
+    <form action="<?= base_url('admin/course/save'); ?>" method="post">
         <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title" name="title" required>
-        </div>
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            <label for="judul">Title:</label>
+            <input type="text" class="form-control" id="judul" name="judul_course">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -34,12 +34,11 @@
     <div id="sidebar" class="sidebar">
         <h2>Admin Panel</h2>
         <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="<?= base_url(''); ?>">Courses</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?= base_url(''); ?>">Lesson</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?= base_url(''); ?>">Quizzes</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?= base_url(''); ?>">Quiz Results</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?= base_url('admin/manage/users'); ?>">Users</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?= base_url(''); ?>">Logout</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= base_url('admin/course'); ?>">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= base_url('admin/lesson'); ?>">Lesson</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= base_url('admin/user'); ?>">Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= base_url('admin/teacher'); ?>">Teacher</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= base_url('logout'); ?>">Logout</a></li>
         </ul>
     </div>
 

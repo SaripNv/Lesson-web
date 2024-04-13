@@ -7,29 +7,29 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('admin/dashboard', 'AdminController::index');
+// Add routes for AdminController methods
+$routes->get('admin/user', 'AdminController::user');
+$routes->get('admin/course', 'AdminController::course');
+$routes->get('admin/course/add', 'AdminController::add_course');
+$routes->post('admin/course/save', 'AdminController::save_course');
+$routes->get('admin/course/edit/(:num)', 'AdminController::edit_course/$1');
+$routes->post('admin/course/update/(:num)', 'AdminController::update_course/$1');
+$routes->get('admin/course/delete/(:num)', 'AdminController::delete_course/$1');
 
-$routes->get('admin/manage/users', 'AdminController::manageUsers');
+$routes->get('admin/lesson', 'AdminController::lesson');
 
-$routes->get('admin/manage/courses', 'AdminController::manageCourses');
-$routes->get('admin/add_course', 'AdminController::addCourseForm');
-$routes->post('admin/save_course', 'AdminController::saveCourse');
-$routes->get('admin/edit_course/(:num)', 'AdminController::editCourseForm/$1');
-$routes->post('admin/update_course/(:num)', 'AdminController::updateCourse/$1');
 
-$routes->get('admin/manage/lessons', 'AdminController::manageLessons');
-$routes->get('admin/manage/quizzes', 'AdminController::manageQuizzes');
-$routes->get('admin/manage/quiz_results', 'AdminController::manageQuizResults');
+// Routes for Teacher Management
+$routes->get('admin/teacher', 'AdminController::teacher');
+$routes->get('admin/teacher/add', 'AdminController::add_teacher');
+$routes->post('admin/teacher/save', 'AdminController::save_teacher');
+$routes->get('admin/teacher/edit/(:num)', 'AdminController::edit_teacher/$1');
+$routes->post('admin/teacher/update/(:num)', 'AdminController::update_teacher/$1');
 
-$routes->get('quiz_results', 'QuizResultController::index');
 
+// Add routes for authentication
 $routes->get('register', 'Home::register');
 $routes->post('register', 'Home::register');
-
 $routes->get('login', 'Home::login');
 $routes->post('login', 'Home::login');
-
 $routes->get('logout', 'Home::logout');
-
-// Tambahkan rute untuk halaman kursus
-$routes->get('course', 'Home::course');
-$routes->get('course1', 'Home::course1');

@@ -1,0 +1,109 @@
+CRITICAL - 2024-04-12 14:24:32 --> ErrorException: Undefined variable $users
+in APPPATH\Views\admin\user\user.php on line 18.
+ 1 APPPATH\Views\admin\user\user.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\laragon\\www\\kursus\\app\\Views\\admin\\user\\user.php', 18)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\admin\\user\\user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/user/user', [], true)
+ 5 APPPATH\Controllers\AdminController.php(39): view('admin/user/user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->user()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-12 14:25:41 --> ErrorException: Undefined variable $users
+in APPPATH\Views\admin\user\user.php on line 18.
+ 1 APPPATH\Views\admin\user\user.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\laragon\\www\\kursus\\app\\Views\\admin\\user\\user.php', 18)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\admin\\user\\user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/user/user', [], true)
+ 5 APPPATH\Controllers\AdminController.php(39): view('admin/user/user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->user()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-04-12 14:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-12 14:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-12 15:06:46 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`kursus_inggris`.`course`, CONSTRAINT `course_ibfk_1` FOREIGN KEY (`id_guru`) REFERENCES `teacher` (`id_teacher`)) in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\kursus\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\kursus\system\Model.php(744): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\kursus\app\Controllers\AdminController.php(70): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->save_course()
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#10 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2024-04-12 15:06:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`kursus_inggris`.`course`, CONSTRAINT `course_ibfk_1` FOREIGN KEY (`id_guru`) REFERENCES `teacher` (`id_teacher`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `course` (`judul_course`) VALUES (:judul_course:)', [...], false)
+ 2 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\AdminController.php(70): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->save_course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-12 15:06:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`kursus_inggris`.`course`, CONSTRAINT `course_ibfk_1` FOREIGN KEY (`id_guru`) REFERENCES `teacher` (`id_teacher`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `course` (`judul_course`) VALUES (\'Inggris I\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `course` (`judul_course`) VALUES (\'Inggris I\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `course` (`judul_course`) VALUES (:judul_course:)', [...], false)
+ 4 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\AdminController.php(70): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->save_course()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-12 15:06:46 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`kursus_inggris`.`course`, CONSTRAINT `course_ibfk_1` FOREIGN KEY (`id_guru`) REFERENCES `teacher` (`id_teacher`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `course` (`judul_course`) VALUES (\'Inggris I\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `course` (`judul_course`) VALUES (\'Inggris I\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `course` (`judul_course`) VALUES (\'Inggris I\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `course` (`judul_course`) VALUES (:judul_course:)', [...], false)
+ 5 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\AdminController.php(70): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->save_course()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-12 15:09:25 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/teacher/teacher.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/teacher/teacher.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/teacher/teacher', [], true)
+ 3 APPPATH\Controllers\AdminController.php(133): view('admin/teacher/teacher', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->teacher()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-12 15:21:12 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\AdminController.php on line 157.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->save_teacher()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-04-12 15:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-12 15:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-12 15:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-12 15:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-12 15:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-12 15:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-12 15:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-12 15:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-12 15:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
