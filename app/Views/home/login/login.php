@@ -78,7 +78,7 @@
                                     <option value="">Select Role</option>
                                     <option value="admin">Admin</option>
                                     <option value="guru">Guru</option>
-                                    <option value="pelajar">Pelajar</option>
+                                    <option value="user">User</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary">Login</button>

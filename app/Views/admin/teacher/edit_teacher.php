@@ -9,41 +9,36 @@
         enctype="multipart/form-data">
         <div class="form-group">
             <label for="nama">Name:</label>
-            <input type="text" class="form-control" id="nama" name="nama" value="<?= old('nama', $teacher['nama']) ?>"
-                required>
-            <!-- Tambahkan pesan kesalahan untuk input nama -->
+            <input type="text" class="form-control" id="nama" name="nama" value="<?= $teacher['nama'] ?>" required>
             <div class="invalid-feedback">Name is required.</div>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email"
-                value="<?= old('email', $teacher['email']) ?>" required>
-            <!-- Tambahkan pesan kesalahan untuk input email -->
+            <input type="email" class="form-control" id="email" name="email" value="<?= $teacher['email'] ?>" required>
             <div class="invalid-feedback">Valid email is required.</div>
         </div>
         <div class="form-group">
             <label for="bidang_keahlian">Expertise:</label>
             <input type="text" class="form-control" id="bidang_keahlian" name="bidang_keahlian"
-                value="<?= old('bidang_keahlian', $teacher['bidang_keahlian']) ?>" required>
-            <!-- Tambahkan pesan kesalahan untuk input bidang keahlian -->
+                value="<?= $teacher['bidang_keahlian'] ?>" required>
             <div class="invalid-feedback">Expertise is required.</div>
         </div>
         <div class="form-group">
             <label for="deskripsi">Description:</label>
             <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4"
-                required><?= old('deskripsi', $teacher['deskripsi']) ?></textarea>
-            <!-- Tambahkan pesan kesalahan untuk input deskripsi -->
+                required><?= $teacher['deskripsi'] ?></textarea>
             <div class="invalid-feedback">Description is required.</div>
         </div>
         <div class="form-group">
-            <label for="foto_guru">Photo:</label>
-            <input type="file" class="form-control-file" id="foto_guru" name="foto_guru">
+            <label for="foto_guru">Current Photo:</label><br>
             <?php if (!empty($teacher['foto_guru'])) : ?>
-            <img src="<?= base_url('assets/img/' . $teacher['foto_guru']) ?>" alt="<?= $teacher['nama'] ?>"
-                class="img-thumbnail mt-2">
+            <img src="<?= base_url('assets/img/' . $teacher['foto_guru']) ?>" class="img-thumbnail"
+                alt="<?= $teacher['nama'] ?>">
             <?php else : ?>
-            <p>No Photo</p>
+            No Photo
             <?php endif; ?>
+            <input type="file" class="form-control-file mt-2" id="foto_guru" name="foto_guru">
+            <div class="invalid-feedback">Photo is required.</div>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
