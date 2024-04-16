@@ -28,7 +28,6 @@
                             <th>No</th>
                             <th>Title</th>
                             <th>Teacher</th>
-                            <th>Created At</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -39,7 +38,6 @@
                             <td><?= $key + 1 ?></td>
                             <td><?= $course['judul_course'] ?></td>
                             <td><?= $course['teacher_name'] ?></td>
-                            <td><?= $course['created_at'] ?></td>
                             <td>
                                 <a href="<?= base_url('/admin/course/edit/' . $course['id_course']) ?>"
                                     class="btn btn-primary btn-sm">

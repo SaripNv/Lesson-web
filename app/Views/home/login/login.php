@@ -77,7 +77,7 @@
                                 <select name="role" id="role" class="form-control" required>
                                     <option value="">Select Role</option>
                                     <option value="admin">Admin</option>
-                                    <option value="guru">Guru</option>
+                                    <option value="teacher">Teacher</option>
                                     <option value="user">User</option>
                                 </select>
                             </div>

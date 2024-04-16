@@ -1,4 +1,6 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
@@ -10,12 +12,13 @@ class CourseModel extends Model
 
     public function getCourse($id_course)
     {
-        return $this->where('id_course', $id_course)->first();
+        return $this->join('teacher', 'teacher.id_teacher = course.id_teacher')
+                    ->where('course.id_course', $id_course)
+                    ->select('course.*, teacher.nama as teacher_name')
+                    ->first();
     }
+    
 
-    // Jika diperlukan, tambahkan metode lain untuk mengambil data kursus
-
-    // Metode untuk mendapatkan daftar guru untuk dropdown
     public function getTeachersForDropdown()
     {
         $teacherModel = new TeacherModel();

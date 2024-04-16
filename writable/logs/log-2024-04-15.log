@@ -1,0 +1,402 @@
+INFO - 2024-04-15 00:55:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-15 00:55:40 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'kursus_inggris', 3306, '', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(676): CodeIgniter\Model->doFirst()
+#6 C:\laragon\www\kursus\app\Models\UserModel.php(17): CodeIgniter\BaseModel->first()
+#7 C:\laragon\www\kursus\app\Controllers\Home.php(43): App\Models\UserModel->getUserByRole('sarip', 'admin')
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\Home->login()
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\kursus\system\Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\kursus\system\BaseModel.php(676): CodeIgniter\Model->doFirst()
+#5 C:\laragon\www\kursus\app\Models\UserModel.php(17): CodeIgniter\BaseModel->first()
+#6 C:\laragon\www\kursus\app\Controllers\Home.php(43): App\Models\UserModel->getUserByRole('sarip', 'admin')
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\Home->login()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-04-15 00:55:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user`
+WHERE `username` = :username:
+AND `role` = :role:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(270): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\UserModel.php(17): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Home.php(43): App\Models\UserModel->getUserByRole('sarip', 'admin')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->login()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-04-15 00:55:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:55:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:56:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:56:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:56:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:56:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:56:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 00:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:07:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-15 01:07:35 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-04-15 01:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-15 01:12:44 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-04-15 01:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:14:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:14:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:16:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:22:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:22:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:27:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:28:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:31:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-15 01:31:57 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-04-15 01:36:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:36:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:36:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:36:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-15 01:36:23 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-04-15 01:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-15 01:39:01 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-04-15 01:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:44:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 01:44:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-15 01:44:43 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+CRITICAL - 2024-04-15 05:44:02 --> ErrorException: Undefined variable $teacher
+in APPPATH\Views\home\index.php on line 119.
+ 1 APPPATH\Views\home\index.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $teacher', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\index.php', 119)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(16): view('home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 06:00:44 --> ErrorException: Undefined variable $teachers
+in APPPATH\Views\home\index.php on line 108.
+ 1 APPPATH\Views\home\index.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $teachers', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\index.php', 108)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(16): view('home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 06:00:45 --> ErrorException: Undefined variable $teachers
+in APPPATH\Views\home\index.php on line 108.
+ 1 APPPATH\Views\home\index.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $teachers', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\index.php', 108)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(16): view('home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 06:07:00 --> ErrorException: Undefined variable $teachers
+in APPPATH\Views\home\index.php on line 108.
+ 1 APPPATH\Views\home\index.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $teachers', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\index.php', 108)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(16): view('home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-04-15 06:13:29 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'kursus_inggris', 3306, '', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\Home.php(29): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\Home->index()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\laragon\www\kursus\app\Controllers\Home.php(29): CodeIgniter\BaseModel->findAll()
+#6 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\Home->index()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2024-04-15 06:13:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user`', [], false)
+ 3 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(29): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-04-15 07:15:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 07:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 23:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-15 23:02:28 --> ErrorException: Undefined array key "gambar"
+in APPPATH\Views\home\course\course.php on line 11.
+ 1 APPPATH\Views\home\course\course.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "gambar"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 11)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(51): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 23:02:56 --> ErrorException: Undefined array key "deskripsi"
+in APPPATH\Views\home\course\course.php on line 13.
+ 1 APPPATH\Views\home\course\course.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "deskripsi"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 13)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(51): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 23:04:54 --> ErrorException: Undefined array key "teacher_name"
+in APPPATH\Views\home\course\course.php on line 12.
+ 1 APPPATH\Views\home\course\course.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "teacher_name"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(51): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 23:05:53 --> ErrorException: Undefined array key "teacher_name"
+in APPPATH\Views\home\course\course.php on line 12.
+ 1 APPPATH\Views\home\course\course.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "teacher_name"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 23:09:01 --> ErrorException: Undefined array key "teacher_name"
+in APPPATH\Views\home\course\course.php on line 12.
+ 1 APPPATH\Views\home\course\course.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "teacher_name"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 23:09:03 --> ErrorException: Undefined array key "teacher_name"
+in APPPATH\Views\home\course\course.php on line 12.
+ 1 APPPATH\Views\home\course\course.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "teacher_name"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 23:09:17 --> ErrorException: Undefined array key "nama"
+in APPPATH\Views\home\course\course.php on line 12.
+ 1 APPPATH\Views\home\course\course.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-04-15 23:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-15 23:09:30 --> ErrorException: Undefined array key "nama"
+in APPPATH\Views\admin\course\course.php on line 41.
+ 1 APPPATH\Views\admin\course\course.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\laragon\\www\\kursus\\app\\Views\\admin\\course\\course.php', 41)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\admin\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/course/course', [], true)
+ 5 APPPATH\Controllers\AdminController.php(174): view('admin/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-04-15 23:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 23:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 23:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 23:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-15 23:12:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-15 23:12:18 --> ErrorException: Undefined array key "teacher_name"
+in APPPATH\Views\home\course\course.php on line 12.
+ 1 APPPATH\Views\home\course\course.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "teacher_name"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 23:12:20 --> ErrorException: Undefined array key "teacher_name"
+in APPPATH\Views\home\course\course.php on line 12.
+ 1 APPPATH\Views\home\course\course.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "teacher_name"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 12)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 23:16:25 --> ErrorException: Undefined array key "teacher_name"
+in APPPATH\Views\home\course\course.php on line 15.
+ 1 APPPATH\Views\home\course\course.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "teacher_name"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 15)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-04-15 23:18:09 --> ErrorException: Cannot declare class App\Models\CourseModel, because the name is already in use
+in APPPATH\Models\TeacherModel.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-04-15 23:18:15 --> ErrorException: Cannot declare class App\Models\CourseModel, because the name is already in use
+in APPPATH\Models\TeacherModel.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-04-15 23:20:19 --> ErrorException: Undefined array key "teacher_name"
+in APPPATH\Views\home\course\course.php on line 15.
+ 1 APPPATH\Views\home\course\course.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "teacher_name"', 'C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php', 15)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\laragon\\www\\kursus\\app\\Views\\home\\course\\course.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home/course/course', [], true)
+ 5 APPPATH\Controllers\Home.php(52): view('home/course/course', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->course()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')

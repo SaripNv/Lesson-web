@@ -267,15 +267,137 @@ public function delete_course($id)
 }
 
 // lesson
-    public function lesson()
-    {
-        $lessons = $this->lessonModel->findAll();
-        $data = [
-            'title' => 'Lesson',
-            'lessons' => $lessons,
-        ];
-        return view('admin/lesson/lesson', $data);
+public function lesson()
+{
+    $lessons = $this->lessonModel->findAll();
+    $data = [
+        'title' => 'Lesson',
+        'lessons' => $lessons,
+    ];
+    return view('admin/lesson/lesson', $data);
+}
+
+public function add_lesson()
+{
+    $courses = $this->courseModel->findAll();
+    $data = [
+        'title' => 'Add Lesson',
+        'courses' => $courses,
+    ];
+    return view('admin/lesson/add_lesson', $data);
+}
+
+public function save_lesson()
+{
+    $validationRules = [
+        'judul' => 'required',
+        'id_course' => 'required',
+        'file_video' => 'uploaded[file_video]|max_size[file_video,10240]|is_video[file_video]'
+    ];
+
+    if (!$this->validate($validationRules)) {
+        return redirect()->to('/admin/lesson/add')->withInput()->with('validation', $this->validator);
     }
+
+    $file_video = $this->request->getFile('file_video');
+
+    if ($file_video->isValid() && !$file_video->hasMoved()) {
+        $newName = $file_video->getRandomName();
+        $file_video->move(ROOTPATH . 'public/assets/videos', $newName);
+
+        $lessonData = [
+            'id_course' => $this->request->getPost('id_course'),
+            'judul' => $this->request->getPost('judul'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'urutan' => $this->request->getPost('urutan'),
+            'file_video' => $newName
+        ];
+
+        if ($this->lessonModel->insert($lessonData)) {
+            return redirect()->to('/admin/lesson')->with('success', 'Lesson added successfully.');
+        } else {
+            return redirect()->to('/admin/lesson/add')->withInput()->with('error', 'Failed to save lesson data. Please try again.');
+        }
+    } else {
+        return redirect()->to('/admin/lesson/add')->withInput()->with('error', 'Failed to upload lesson video. Please try again.');
+    }
+}
+
+public function edit_lesson($id)
+{
+    $lesson = $this->lessonModel->find($id);
+    $courses = $this->courseModel->findAll();
+
+    if (!$lesson) {
+        return redirect()->to('/admin/lesson')->with('error', 'Lesson not found.');
+    }
+
+    $data = [
+        'title' => 'Edit Lesson',
+        'lesson' => $lesson,
+        'courses' => $courses,
+    ];
+
+    return view('admin/lesson/edit_lesson', $data);
+}
+
+public function update_lesson($id)
+{
+    $validationRules = [
+        'judul' => 'required',
+        'id_course' => 'required',
+    ];
+
+    if (!$this->validate($validationRules)) {
+        return redirect()->to('/admin/lesson/edit/' . $id)->withInput()->with('validation', $this->validator);
+    }
+
+    $lesson = $this->lessonModel->find($id);
+
+    if (!$lesson) {
+        return redirect()->to('/admin/lesson')->with('error', 'Lesson not found.');
+    }
+
+    $file_video = $this->request->getFile('file_video');
+    $file_video_name = $lesson['file_video'];
+
+    if ($file_video->isValid() && !$file_video->hasMoved()) {
+        $newName = $file_video->getRandomName();
+        $file_video->move(ROOTPATH . 'public/assets/videos', $newName);
+        $file_video_name = $newName;
+    }
+
+    $lessonData = [
+        'id_course' => $this->request->getPost('id_course'),
+        'judul' => $this->request->getPost('judul'),
+        'deskripsi' => $this->request->getPost('deskripsi'),
+        'urutan' => $this->request->getPost('urutan'),
+        'file_video' => $file_video_name
+    ];
+
+    if ($this->lessonModel->update($id, $lessonData)) {
+        return redirect()->to('/admin/lesson')->with('success', 'Lesson updated successfully.');
+    } else {
+        return redirect()->to('/admin/lesson/edit/' . $id)->withInput()->with('error', 'Failed to update lesson data. Please try again.');
+    }
+}
+
+public function delete_lesson($id)
+{
+    $lesson = $this->lessonModel->find($id);
+
+    if (!$lesson) {
+        return redirect()->to('/admin/lesson')->with('error', 'Lesson not found.');
+    }
+
+    if ($this->lessonModel->delete($id)) {
+        return redirect()->to('/admin/lesson')->with('success', 'Lesson deleted successfully.');
+    } else {
+        return redirect()->to('/admin/lesson')->with('error', 'Failed to delete lesson. Please try again.');
+    }
+}
+
+
 
     // teacher
     public function teacher()

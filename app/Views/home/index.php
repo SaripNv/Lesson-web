@@ -100,57 +100,42 @@
             </div>
         </section>
     </main>
-    <!-- ---tumbnail--- -->
+    <!-- teacher -->
     <main>
         <div class="album py-5 bg-body-tertiary">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <?php foreach ($teachers as $teacher) : ?>
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="path_to_your_image" class="bd-placeholder-img card-img-top" width="100%"
-                                height="225" alt="Thumbnail">
+                            <?php if (!empty($teacher['foto_guru'])) : ?>
+                            <img src="<?= base_url('assets/img/' . $teacher['foto_guru']) ?>"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                alt="<?= $teacher['nama'] ?>">
+                            <?php else : ?>
+                            <img src="<?= base_url('path_to_your_default_image') ?>"
+                                class="bd-placeholder-img card-img-top" width="100%" height="225" alt="No Photo">
+                            <?php endif; ?>
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <!-- Menempatkan judul kartu di tengah -->
+                                <h5 class="card-title text-center"><?= $teacher['nama'] ?></h5>
+                                <p class="card-text"><?= $teacher['deskripsi'] ?></p>
                                 <div class="text-center">
-                                    <!-- Posisi view button di tengah -->
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <!-- Link View diarahkan ke halaman detail guru -->
+                                    <a href="<?= base_url('detail_teacher/' . $teacher['id_teacher']) ?>"
+                                        class="btn btn-sm btn-outline-secondary">View</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="path_to_your_image" class="bd-placeholder-img card-img-top" width="100%"
-                                height="225" alt="Thumbnail">
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="text-center">
-                                    <!-- Posisi view button di tengah -->
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="path_to_your_image" class="bd-placeholder-img card-img-top" width="100%"
-                                height="225" alt="Thumbnail">
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="text-center">
-                                    <!-- Posisi view button di tengah -->
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </main>
+
+
+
     <main>
         <section class="py-5 bg-primary text-white">
             <div class="container">
@@ -159,51 +144,16 @@
                     <div class="col-md-6">
                         <h2>Background Menarik</h2>
                         <p>Ini adalah teks yang berada di sisi kiri dari background menarik.</p>
-                        <button type="button" class="btn btn-light">Get Started</button>
+                        <!-- Mengubah tombol menjadi tautan (link) -->
+                        <a href="<?= base_url('course') ?>" class="btn btn-light">Get Started</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <main>
-        <div class="row">
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    xmlns="http://www.w3.org/2000/img" role="img" aria-label="Placeholder"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                </img>
-                <h2 class="fw-normal">Heading</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is the
-                    first column.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    xmlns="http://www.w3.org/2000/img" role="img" aria-label="Placeholder"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                </img>
-                <h2 class="fw-normal">Heading</h2>
-                <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second
-                    column.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    xmlns="http://www.w3.org/2000/img" role="img" aria-label="Placeholder"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                </img>
-                <h2 class="fw-normal">Heading</h2>
-                <p>And lastly this, the third column of representative placeholder content.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-    </main>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
