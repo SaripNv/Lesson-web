@@ -40,6 +40,14 @@ $routes->get('admin/teacher/edit/(:num)', 'AdminController::edit_teacher/$1');
 $routes->post('admin/teacher/update/(:num)', 'AdminController::update_teacher/$1');
 $routes->get('admin/course/delete/(:num)', 'AdminController::delete_course/$1');
 
+// Routes for gallery
+$routes->get('admin/gallery', 'AdminController::gallery');
+$routes->get('admin/gallery/add', 'AdminController::add_gallery');
+$routes->post('admin/gallery/save', 'AdminController::save_gallery');
+$routes->get('admin/gallery/edit/(:num)', 'AdminController::edit_gallery/$1');
+$routes->post('admin/gallery/update/(:num)', 'AdminController::update_gallery/$1');
+$routes->get('admin/gallery/delete/(:num)', 'AdminController::delete_gallery/$1');
+
 
 // Routes for teacher detail
 $routes->get('detail_teacher/(:num)', 'Home::detail_teacher/$1');
@@ -48,9 +56,9 @@ $routes->get('detail_teacher/(:num)', 'Home::detail_teacher/$1');
 $routes->get('course', 'Home::course');
 $routes->get('course/(:num)', 'Home::detail_course/$1');
 
-
-
-
+// Routes for lessons in the Home controller
+$routes->get('lesson', 'Home::lesson');
+$routes->get('lesson/(:num)', 'Home::detail_lesson/$1');
 
 // Add routes for authentication
 $routes->get('register', 'Home::register');

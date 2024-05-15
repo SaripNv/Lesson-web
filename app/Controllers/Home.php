@@ -7,7 +7,9 @@ use App\Models\CourseModel;
 use App\Models\LessonModel;
 use App\Models\TeacherModel;
 use App\Models\UserModel; 
+use App\Models\GalleryModel;
 use CodeIgniter\Controller;
+
 class Home extends Controller
 {
     
@@ -15,6 +17,7 @@ class Home extends Controller
     protected $lessonModel;
     protected $teacherModel;
     protected $userModel;
+    protected $galleryModel;
     
 
     public function __construct()
@@ -23,36 +26,57 @@ class Home extends Controller
         $this->lessonModel = new LessonModel();
         $this->teacherModel = new TeacherModel();
         $this->userModel = new UserModel();
+        $this->galleryModel = new GalleryModel();
     }
     public function index()
     {
         $users = $this->userModel->findAll();
         $teachers = $this->teacherModel->findAll();
+        $gallery = $this->galleryModel->findAll(); // Tambahkan baris ini untuk mengambil data galeri
         $data = [
             'title' => 'Home',
             'users' => $users,
             'teachers' => $teachers,
+            'gallery' => $gallery, // Kirim data galeri ke tampilan
         ];
-
+    
         return view('home/index', $data);
     }
-    
 
     public function course()
     {
         // Ambil daftar kursus dan data guru untuk dropdown
-        $courses = $this->courseModel->findAll();
+        $courses = $this->courseModel->select('course.*, teacher.nama as teacher_name')
+                                     ->join('teacher', 'teacher.id_teacher = course.id_teacher')
+                                     ->findAll();
         $teachersDropdown = $this->courseModel->getTeachersForDropdown();
-
+    
         $data = [
             'title' => 'Course',
             'courses' => $courses,
             'teachersDropdown' => $teachersDropdown,
         ];
-
+    
         return view('home/course/course', $data);
     }
     
+    
+    public function lesson()
+    {
+        $lessons = $this->lessonModel->findAll();
+        $coursesDropdown = $this->lessonModel->getCoursesForDropdown();
+    
+        $data = [
+            'title' => 'Lessons',
+            'lessons' => $lessons,
+            'coursesDropdown' => $coursesDropdown,
+        ];
+    
+        return view('home/lesson/lesson', $data);
+    }
+    
+    
+
     public function detail_teacher($id)
 {
     if (!is_numeric($id) || $id <= 0) {

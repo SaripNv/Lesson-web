@@ -5,7 +5,8 @@ namespace App\Controllers;
 use App\Models\CourseModel;
 use App\Models\LessonModel;
 use App\Models\TeacherModel;
-use App\Models\UserModel; 
+use App\Models\UserModel;
+use App\Models\GalleryModel; // Tambahkan ini untuk menggunakan model GalleryModel
 use CodeIgniter\Controller;
 
 class AdminController extends BaseController
@@ -14,7 +15,7 @@ class AdminController extends BaseController
     protected $lessonModel;
     protected $teacherModel;
     protected $userModel;
-    
+    protected $galleryModel; // Tambahkan variabel $galleryModel
 
     public function __construct()
     {
@@ -22,7 +23,9 @@ class AdminController extends BaseController
         $this->lessonModel = new LessonModel();
         $this->teacherModel = new TeacherModel();
         $this->userModel = new UserModel();
+        $this->galleryModel = new GalleryModel(); // Inisialisasi $galleryModel
     }
+
 
     public function index()
     {
@@ -268,16 +271,19 @@ public function delete_course($id)
 
 // lesson
 public function lesson()
-{
-    $lessons = $this->lessonModel->findAll();
-    $data = [
-        'title' => 'Lesson',
-        'lessons' => $lessons,
-    ];
-    return view('admin/lesson/lesson', $data);
-}
+    {
+        $lessons = $this->lessonModel->join('course', 'course.id_course = lesson.id_course')
+                                     ->orderBy('lesson.order', 'ASC')
+                                     ->select('lesson.*, course.judul_course as course_title')
+                                     ->findAll();
+        $data = [
+            'title' => 'Lesson',
+            'lessons' => $lessons,
+        ];
+        return view('admin/lesson/lesson', $data);
+    }
 
-public function add_lesson()
+    public function add_lesson()
 {
     $courses = $this->courseModel->findAll();
     $data = [
@@ -287,117 +293,80 @@ public function add_lesson()
     return view('admin/lesson/add_lesson', $data);
 }
 
-public function save_lesson()
-{
-    $validationRules = [
-        'judul' => 'required',
-        'id_course' => 'required',
-        'file_video' => 'uploaded[file_video]|max_size[file_video,10240]|is_video[file_video]'
-    ];
 
-    if (!$this->validate($validationRules)) {
-        return redirect()->to('/admin/lesson/add')->withInput()->with('validation', $this->validator);
-    }
-
-    $file_video = $this->request->getFile('file_video');
-
-    if ($file_video->isValid() && !$file_video->hasMoved()) {
-        $newName = $file_video->getRandomName();
-        $file_video->move(ROOTPATH . 'public/assets/videos', $newName);
-
-        $lessonData = [
+    public function save_lesson()
+    {
+        $data = [
+            'title' => $this->request->getPost('title'),
+            'content' => $this->request->getPost('content'),
             'id_course' => $this->request->getPost('id_course'),
-            'judul' => $this->request->getPost('judul'),
-            'deskripsi' => $this->request->getPost('deskripsi'),
-            'urutan' => $this->request->getPost('urutan'),
-            'file_video' => $newName
+            'order' => $this->request->getPost('order'),
+            'video_url' => $this->request->getPost('video_url'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ];
 
-        if ($this->lessonModel->insert($lessonData)) {
-            return redirect()->to('/admin/lesson')->with('success', 'Lesson added successfully.');
+        if ($this->lessonModel->save($data)) {
+            return redirect()->to('/admin/lesson')->with('success', 'Lesson added successfully');
         } else {
-            return redirect()->to('/admin/lesson/add')->withInput()->with('error', 'Failed to save lesson data. Please try again.');
+            return redirect()->to('/admin/lesson/add')->with('error', 'Failed to add lesson. Please try again.');
         }
-    } else {
-        return redirect()->to('/admin/lesson/add')->withInput()->with('error', 'Failed to upload lesson video. Please try again.');
-    }
-}
-
-public function edit_lesson($id)
-{
-    $lesson = $this->lessonModel->find($id);
-    $courses = $this->courseModel->findAll();
-
-    if (!$lesson) {
-        return redirect()->to('/admin/lesson')->with('error', 'Lesson not found.');
     }
 
-    $data = [
-        'title' => 'Edit Lesson',
-        'lesson' => $lesson,
-        'courses' => $courses,
-    ];
+    public function edit_lesson($id)
+    {
+        $lesson = $this->lessonModel->find($id);
+        if (!$lesson) {
+            return redirect()->to('/admin/lesson')->with('error', 'Lesson not found.');
+        }
 
-    return view('admin/lesson/edit_lesson', $data);
-}
+        $courses = $this->courseModel->findAll();
+        $data = [
+            'title' => 'Edit Lesson',
+            'lesson' => $lesson,
+            'courses' => $courses,
+        ];
 
-public function update_lesson($id)
-{
-    $validationRules = [
-        'judul' => 'required',
-        'id_course' => 'required',
-    ];
-
-    if (!$this->validate($validationRules)) {
-        return redirect()->to('/admin/lesson/edit/' . $id)->withInput()->with('validation', $this->validator);
+        return view('admin/lesson/edit_lesson', $data);
     }
 
-    $lesson = $this->lessonModel->find($id);
+    public function update_lesson($id)
+    {
+        $lesson = $this->lessonModel->find($id);
+        if (!$lesson) {
+            return redirect()->to('/admin/lesson')->with('error', 'Lesson not found.');
+        }
 
-    if (!$lesson) {
-        return redirect()->to('/admin/lesson')->with('error', 'Lesson not found.');
+        $data = [
+            'title' => $this->request->getPost('title'),
+            'content' => $this->request->getPost('content'),
+            'id_course' => $this->request->getPost('id_course'),
+            'order' => $this->request->getPost('order'),
+            'video_url' => $this->request->getPost('video_url'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ];
+
+        if ($this->lessonModel->update($id, $data)) {
+            return redirect()->to('/admin/lesson')->with('success', 'Lesson updated successfully');
+        } else {
+            return redirect()->to('/admin/lesson/edit/' . $id)->with('error', 'Failed to update lesson. Please try again.');
+        }
     }
 
-    $file_video = $this->request->getFile('file_video');
-    $file_video_name = $lesson['file_video'];
+    public function delete_lesson($id)
+    {
+        $lesson = $this->lessonModel->find($id);
 
-    if ($file_video->isValid() && !$file_video->hasMoved()) {
-        $newName = $file_video->getRandomName();
-        $file_video->move(ROOTPATH . 'public/assets/videos', $newName);
-        $file_video_name = $newName;
+        if (!$lesson) {
+            return redirect()->to('/admin/lesson')->with('error', 'Lesson not found.');
+        }
+
+        if ($this->lessonModel->delete($id)) {
+            return redirect()->to('/admin/lesson')->with('success', 'Lesson deleted successfully.');
+        } else {
+            return redirect()->to('/admin/lesson')->with('error', 'Failed to delete lesson. Please try again.');
+        }
     }
-
-    $lessonData = [
-        'id_course' => $this->request->getPost('id_course'),
-        'judul' => $this->request->getPost('judul'),
-        'deskripsi' => $this->request->getPost('deskripsi'),
-        'urutan' => $this->request->getPost('urutan'),
-        'file_video' => $file_video_name
-    ];
-
-    if ($this->lessonModel->update($id, $lessonData)) {
-        return redirect()->to('/admin/lesson')->with('success', 'Lesson updated successfully.');
-    } else {
-        return redirect()->to('/admin/lesson/edit/' . $id)->withInput()->with('error', 'Failed to update lesson data. Please try again.');
-    }
-}
-
-public function delete_lesson($id)
-{
-    $lesson = $this->lessonModel->find($id);
-
-    if (!$lesson) {
-        return redirect()->to('/admin/lesson')->with('error', 'Lesson not found.');
-    }
-
-    if ($this->lessonModel->delete($id)) {
-        return redirect()->to('/admin/lesson')->with('success', 'Lesson deleted successfully.');
-    } else {
-        return redirect()->to('/admin/lesson')->with('error', 'Failed to delete lesson. Please try again.');
-    }
-}
-
-
 
     // teacher
     public function teacher()
@@ -530,5 +499,132 @@ public function delete_teacher($id)
         return redirect()->to('/admin/teacher')->with('error', 'Failed to delete teacher. Please try again.');
     }
 }
+
+// gallery
+public function gallery()
+{
+    $gallery = $this->galleryModel->findAll();
+    $data = [
+        'title' => 'Gallery',
+        'gallery' => $gallery,
+    ];
+    return view('admin/gallery/gallery', $data);
+}
+
+public function add_gallery()
+{
+    $data = [
+        'title' => 'Add Photo to Gallery',
+    ];
+    return view('admin/gallery/add_gallery', $data);
+}
+
+public function save_gallery()
+{
+    $validationRules = [
+        'nama_foto' => 'required',
+        'foto' => 'uploaded[foto]|max_size[foto,1024]|is_image[foto]'
+    ];
+
+    if (!$this->validate($validationRules)) {
+        return redirect()->to('/admin/gallery/add')->withInput()->with('validation', $this->validator);
+    }
+
+    $foto = $this->request->getFile('foto');
+
+    if ($foto->isValid() && !$foto->hasMoved()) {
+        $newName = $foto->getRandomName();
+        $foto->move(ROOTPATH . 'public/assets/gallery', $newName);
+
+        $galleryData = [
+            'nama_foto' => $this->request->getPost('nama_foto'),
+            'foto' => $newName,
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'tanggal_diambil' => date('Y-m-d') // Tanggal diambil sekarang
+        ];
+
+        if ($this->galleryModel->insert($galleryData)) {
+            return redirect()->to('/admin/gallery')->with('success', 'Photo added to gallery successfully.');
+        } else {
+            return redirect()->to('/admin/gallery/add')->withInput()->with('error', 'Failed to save photo to gallery. Please try again.');
+        }
+    } else {
+        return redirect()->to('/admin/gallery/add')->withInput()->with('error', 'Failed to upload photo to gallery. Please try again.');
+    }
+}
+
+public function edit_gallery($id)
+{
+    $photo = $this->galleryModel->find($id);
+
+    if (!$photo) {
+        return redirect()->to('/admin/gallery')->with('error', 'Photo not found.');
+    }
+
+    $data = [
+        'title' => 'Edit Photo in Gallery',
+        'photo' => $photo,
+    ];
+
+    return view('admin/gallery/edit_gallery', $data);
+}
+
+public function update_gallery($id)
+{
+    $validationRules = [
+        'nama_foto' => 'required',
+    ];
+
+    if (!$this->validate($validationRules)) {
+        return redirect()->to('/admin/gallery/edit/' . $id)->withInput()->with('validation', $this->validator);
+    }
+
+    $photo = $this->galleryModel->find($id);
+
+    if (!$photo) {
+        return redirect()->to('/admin/gallery')->with('error', 'Photo not found.');
+    }
+
+    $foto = $this->request->getFile('foto');
+
+    // Check if a file is uploaded
+    if ($foto && $foto->isValid() && !$foto->hasMoved()) {
+        $newName = $foto->getRandomName();
+        $foto->move(ROOTPATH . 'public/assets/gallery', $newName);
+        $foto_name = $newName; // Use the new file name if a file is uploaded
+    } else {
+        // If no file uploaded, use the existing file name
+        $foto_name = $photo['foto'];
+    }
+
+    $galleryData = [
+        'nama_foto' => $this->request->getPost('nama_foto'),
+        'foto' => $foto_name,
+        'deskripsi' => $this->request->getPost('deskripsi'),
+    ];
+
+    if ($this->galleryModel->update($id, $galleryData)) {
+        return redirect()->to('/admin/gallery')->with('success', 'Photo in gallery updated successfully.');
+    } else {
+        return redirect()->to('/admin/gallery/edit/' . $id)->withInput()->with('error', 'Failed to update photo in gallery. Please try again.');
+    }
+}
+
+
+public function delete_gallery($id)
+{
+    $photo = $this->galleryModel->find($id);
+
+    if (!$photo) {
+        return redirect()->to('/admin/gallery')->with('error', 'Photo not found.');
+    }
+
+    if ($this->galleryModel->delete($id)) {
+        return redirect()->to('/admin/gallery')->with('success', 'Photo deleted from gallery successfully.');
+    } else {
+        return redirect()->to('/admin/gallery')->with('error', 'Failed to delete photo from gallery. Please try again.');
+    }
+}
+
 
 }

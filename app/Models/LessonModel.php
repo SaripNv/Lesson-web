@@ -8,13 +8,32 @@ class LessonModel extends Model
 {
     protected $table = 'lesson';
     protected $primaryKey = 'id_lesson';
-    protected $allowedFields = ['id_course', 'judul', 'deskripsi', 'urutan', 'file_video', 'created_at', 'updated_at'];
+    protected $allowedFields = ['title', 'content', 'id_course', 'order', 'video_url', 'created_at', 'updated_at'];
 
-    protected $useTimestamps = true;
-    protected $dateFormat = 'datetime';
+    public function getLesson($id_lesson)
+    {
+        return $this->join('course', 'course.id_course = lesson.id_course')
+                    ->where('lesson.id_lesson', $id_lesson)
+                    ->select('lesson.*, course.judul_course as course_title')
+                    ->first();
+    }
 
     public function getLessonsByCourse($id_course)
     {
-        return $this->where('id_course', $id_course)->findAll();
+        return $this->join('course', 'course.id_course = lesson.id_course')
+                    ->where('lesson.id_course', $id_course)
+                    ->select('lesson.*, course.judul_course as course_title')
+                    ->findAll();
+    }
+
+    public function getCoursesForDropdown()
+    {
+        $courseModel = new CourseModel();
+        $courses = $courseModel->findAll();
+        $options = [];
+        foreach ($courses as $course) {
+            $options[$course['id_course']] = $course['judul_course'];
+        }
+        return $options;
     }
 }

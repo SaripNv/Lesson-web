@@ -2,44 +2,48 @@
 
 <?= $this->section('content') ?>
 <div class="container-fluid">
-    <h1 class="h3 mb-2 text-gray-800">Edit Lesson</h1>
-    <p class="mb-4">Here you can edit the lesson.</p>
+
+    <h1 class="h3 mb-2 text-gray-800"><?= $title ?></h1>
+    <p class="mb-4">Edit lesson details.</p>
 
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="<?= base_url('admin/lesson/update/' . $lesson['id_lesson']) ?>" method="post"
-                enctype="multipart/form-data">
+            <form action="<?= base_url('admin/lesson/update/' . $lesson['id_lesson']) ?>" method="post">
                 <?= csrf_field() ?>
                 <div class="form-group">
-                    <label for="judul">Title</label>
-                    <input type="text" name="judul" class="form-control" value="<?= $lesson['judul'] ?>" required>
+                    <label for="title">Lesson Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="<?= $lesson['title'] ?>"
+                        placeholder="Enter lesson title">
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea class="form-control" id="content" name="content"
+                        placeholder="Enter lesson content"><?= $lesson['content'] ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="id_course">Course</label>
-                    <select name="id_course" class="form-control" required>
-                        <option value="">Select Course</option>
+                    <select class="form-control" id="id_course" name="id_course">
                         <?php foreach ($courses as $course) : ?>
                         <option value="<?= $course['id_course'] ?>"
-                            <?php if ($course['id_course'] == $lesson['id_course']) echo 'selected'; ?>>
+                            <?= $lesson['id_course'] == $course['id_course'] ? 'selected' : '' ?>>
                             <?= $course['judul_course'] ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="deskripsi">Description</label>
-                    <textarea name="deskripsi" class="form-control"><?= $lesson['deskripsi'] ?></textarea>
+                    <label for="order">Order</label>
+                    <input type="number" class="form-control" id="order" name="order" value="<?= $lesson['order'] ?>"
+                        placeholder="Enter lesson order">
                 </div>
                 <div class="form-group">
-                    <label for="urutan">Order</label>
-                    <input type="number" name="urutan" class="form-control" value="<?= $lesson['urutan'] ?>">
-                </div>
-                <div class="form-group">
-                    <label for="file_video">Video</label>
-                    <input type="file" name="file_video" class="form-control-file" accept="video/*">
+                    <label for="video_url">Video URL</label>
+                    <input type="url" class="form-control" id="video_url" name="video_url"
+                        value="<?= $lesson['video_url'] ?>" placeholder="Enter video URL">
                 </div>
                 <button type="submit" class="btn btn-primary">Update Lesson</button>
             </form>
         </div>
     </div>
+
 </div>
 <?= $this->endSection() ?>

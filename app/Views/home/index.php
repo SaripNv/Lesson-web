@@ -38,6 +38,12 @@
         user-select: none;
     }
 
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: black;
+        /* Mengubah warna ikon panah menjadi hitam */
+    }
+
     @media (min-width: 768px) {
         .bd-placeholder-img-lg {
             font-size: 3.5rem;
@@ -73,22 +79,14 @@
         <section class="py-5 text-center container">
             <div id="slider" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <img src="<?= base_url('assets/img/ENGLISH.jpeg')?>" class="d-block w-100"
-                            style="object-fit: cover; height: 400px;" alt="Slider Image 1">
+                    <?php foreach ($gallery as $key => $photo) : ?>
+                    <div class="carousel-item <?= $key === 0 ? 'active' : '' ?>">
+                        <img src="<?= base_url('assets/gallery/' . $photo['foto']) ?>" class="d-block w-100"
+                            style="object-fit: cover; height: 400px;" alt="Slider Image <?= $key + 1 ?>">
                     </div>
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <img src="<?= base_url('assets/img/course.jpg')?>" class="d-block w-100"
-                            style="object-fit: cover; height: 400px;" alt="Slider Image 2">
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <img src="<?= base_url('assets/img/images.jpeg')?>" class="d-block w-100"
-                            style="object-fit: cover; height: 400px;" alt="Slider Image 3">
-                    </div>
+                    <?php endforeach; ?>
                 </div>
+
                 <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -119,7 +117,18 @@
                             <div class="card-body">
                                 <!-- Menempatkan judul kartu di tengah -->
                                 <h5 class="card-title text-center"><?= $teacher['nama'] ?></h5>
-                                <p class="card-text"><?= $teacher['deskripsi'] ?></p>
+                                <p class="card-text">
+                                    <?php
+                                // Batasi deskripsi menjadi maksimal 100 karakter
+                                $deskripsi = $teacher['deskripsi'];
+                                if (strlen($deskripsi) > 100) {
+                                    $deskripsi = substr($deskripsi, 0, 100) . "...";
+                                    echo $deskripsi;
+                                } else {
+                                    echo $deskripsi;
+                                }
+                                ?>
+                                </p>
                                 <div class="text-center">
                                     <!-- Link View diarahkan ke halaman detail guru -->
                                     <a href="<?= base_url('detail_teacher/' . $teacher['id_teacher']) ?>"
@@ -136,13 +145,14 @@
 
 
 
+
     <main>
         <section class="py-5 bg-primary text-white">
             <div class="container">
                 <div class="row align-items-center">
                     <!-- Menyelaraskan teks dan tombol ke tengah secara vertikal -->
                     <div class="col-md-6">
-                        <h2>Background Menarik</h2>
+                        <h2>Mulai Belajar</h2>
                         <p>Ini adalah teks yang berada di sisi kiri dari background menarik.</p>
                         <!-- Mengubah tombol menjadi tautan (link) -->
                         <a href="<?= base_url('course') ?>" class="btn btn-light">Get Started</a>

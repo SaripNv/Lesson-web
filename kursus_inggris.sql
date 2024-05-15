@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 17, 2024 at 02:56 AM
+-- Generation Time: May 14, 2024 at 11:43 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -47,19 +47,50 @@ INSERT INTO `course` (`id_course`, `judul_course`, `id_teacher`, `created_at`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `id_gallery` int NOT NULL,
+  `nama_foto` varchar(100) NOT NULL,
+  `foto` text,
+  `deskripsi` text,
+  `tanggal_diambil` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`id_gallery`, `nama_foto`, `foto`, `deskripsi`, `tanggal_diambil`) VALUES
+(1, 'course', '1715124200_06b6c6adc83b11f9f691.jpg', 'a', '2024-05-07'),
+(2, 'english', '1715124219_bedab6e48ac6e000caff.jpeg', 'a', '2024-05-07'),
+(3, 'example', '1715125181_514f2c79344c67412b9c.jpeg', 'a', '2024-05-07');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lesson`
 --
 
 CREATE TABLE `lesson` (
   `id_lesson` int NOT NULL,
-  `id_course` int DEFAULT NULL,
-  `judul` varchar(100) DEFAULT NULL,
-  `deskripsi` text,
-  `urutan` int DEFAULT NULL,
-  `file_video` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+  `title` varchar(100) NOT NULL,
+  `content` text NOT NULL,
+  `id_course` int NOT NULL,
+  `order` int NOT NULL,
+  `video_url` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `lesson`
+--
+
+INSERT INTO `lesson` (`id_lesson`, `title`, `content`, `id_course`, `order`, `video_url`, `created_at`, `updated_at`) VALUES
+(1, 'INTRODUCTION', 'TEST', 1, 1, 'https://youtu.be/k2_2H3qT9q0?si=wjvc-62R5mdGikw7', '2024-05-14 11:48:42', '2024-05-14 11:48:42'),
+(2, 'grammar', 'ini', 3, 2, 'https://youtu.be/P4wgwrAIFfA?si=GWxrM60Q9hVyVNfD', '2024-05-14 23:00:45', '2024-05-14 23:02:17');
 
 -- --------------------------------------------------------
 
@@ -83,9 +114,9 @@ CREATE TABLE `teacher` (
 --
 
 INSERT INTO `teacher` (`id_teacher`, `nama`, `email`, `bidang_keahlian`, `deskripsi`, `foto_guru`, `created_at`, `updated_at`) VALUES
-(1, 'Yamaha', 'Yamaha32@gmail.com', 'speak inggris', 'yamaha semakin di depan', '1713055158_ecb42d274f7832461991.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'Bites', 'chocho@gmail.com', 'asdaaaaaaaaaaaaaaaaa', 'malessss', '1713055473_254b5a6b6c6276b55c7e.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 'jordi', 'jordi69@gmail.com', 'grandmaster', 'adik-adik', '1713056468_5cc0a7e3089003cd5101.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(1, 'Mawar Siti', 'Yamaha32@gmail.com', 'speak inggris', 'Mawar Siti adalah seorang guru biologi yang penuh semangat dan berdedikasi dengan pengalaman lebih dari sepuluh tahun di bidang pendidikan. Ia memiliki gelar Sarjana dalam Biologi dari Universitas XYZ dan gelar Magister dalam Pendidikan dari Sekolah Tinggi ABC. Selama karirnya, Mawar telah menginspirasi banyak siswa dengan gaya mengajar yang menarik dan pendekatan langsung dalam pembelajaran. Keahliannya meliputi ekologi, genetika, dan biologi evolusi. Di luar kelas, Mawar menikmati mendaki gunung, mengamati burung, dan berkontribusi sebagai relawan di organisasi lingkungan setempat. Ia berkomitmen untuk menanamkan cinta akan ilmu pengetahuan kepada siswanya dan mempersiapkan mereka untuk sukses akademis dan karir di bidang biologi', '1713055158_ecb42d274f7832461991.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'Pexel', 'chocho@gmail.com', 'match', 'Pexel adalah seorang guru biologi yang penuh semangat dan berdedikasi dengan pengalaman lebih dari sepuluh tahun di bidang pendidikan. Ia memiliki gelar Sarjana dalam Biologi dari Universitas XYZ dan gelar Magister dalam Pendidikan dari Sekolah Tinggi ABC. Selama karirnya, Mawar telah menginspirasi banyak siswa dengan gaya mengajar yang menarik dan pendekatan langsung dalam pembelajaran. Keahliannya meliputi ekologi, genetika, dan biologi evolusi. Di luar kelas, Mawar menikmati mendaki gunung, mengamati burung, dan berkontribusi sebagai relawan di organisasi lingkungan setempat. Ia berkomitmen untuk menanamkan cinta akan ilmu pengetahuan kepada siswanya dan mempersiapkan mereka untuk sukses akademis dan karir di bidang biologi', '1715121618_0322103cf05a3a1dd324.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'Ling ling', 'jordi69@gmail.com', 'grandmaster', 'Ling ling adalah seorang guru biologi yang penuh semangat dan berdedikasi dengan pengalaman lebih dari sepuluh tahun di bidang pendidikan. Ia memiliki gelar Sarjana dalam Biologi dari Universitas XYZ dan gelar Magister dalam Pendidikan dari Sekolah Tinggi ABC. Selama karirnya, Mawar telah menginspirasi banyak siswa dengan gaya mengajar yang menarik dan pendekatan langsung dalam pembelajaran. Keahliannya meliputi ekologi, genetika, dan biologi evolusi. Di luar kelas, Mawar menikmati mendaki gunung, mengamati burung, dan berkontribusi sebagai relawan di organisasi lingkungan setempat. Ia berkomitmen untuk menanamkan cinta akan ilmu pengetahuan kepada siswanya dan mempersiapkan mereka untuk sukses akademis dan karir di bidang biologi', '1715121653_65f6a16b3d379b735b1b.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -123,6 +154,12 @@ ALTER TABLE `course`
   ADD KEY `id_teacher` (`id_teacher`);
 
 --
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`id_gallery`);
+
+--
 -- Indexes for table `lesson`
 --
 ALTER TABLE `lesson`
@@ -152,10 +189,16 @@ ALTER TABLE `course`
   MODIFY `id_course` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `id_gallery` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id_lesson` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_lesson` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `teacher`

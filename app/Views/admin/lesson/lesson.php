@@ -1,14 +1,17 @@
+<!-- app/Views/home/lesson/lesson.php -->
+
 <?= $this->extend('template/dashboard') ?>
 
 <?= $this->section('content') ?>
 <div class="container-fluid">
-    <h1 class="h3 mb-2 text-gray-800">Manage Lessons</h1>
+
+    <h1 class="h3 mb-2 text-gray-800">Lesson Management</h1>
     <p class="mb-4">Here you can manage lessons.</p>
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">Lesson List</h6>
-            <a href="<?= base_url('admin/lesson/add'); ?>" class="btn btn-primary">Add New Lesson</a>
+            <a href="<?= base_url('admin/lesson/add') ?>" class="btn btn-primary">Add New Lesson</a>
         </div>
         <div class="card-body">
             <?php if(session()->getFlashdata('success')): ?>
@@ -23,10 +26,9 @@
                             <th>No</th>
                             <th>Title</th>
                             <th>Course</th>
-                            <th>Description</th>
                             <th>Order</th>
-                            <th>File Video</th>
-                            <th>Actions</th>
+                            <th>Video</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,38 +36,29 @@
                         <?php foreach ($lessons as $key => $lesson) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $lesson['judul'] ?></td>
-                            <td><?= $lesson['judul_course'] ?></td>
-                            <td><?= $lesson['deskripsi'] ?></td>
-                            <td><?= $lesson['urutan'] ?></td>
+                            <td><?= $lesson['title'] ?></td>
+                            <td><?= $lesson['course_title'] ?></td>
+                            <td><?= $lesson['order'] ?></td>
                             <td>
-                                <?php if (!empty($lesson['file_video'])) : ?>
-                                <!-- Embed video player -->
-                                <video width="320" height="240" controls>
-                                    <source src="<?= base_url('public/assets/videos/' . $lesson['file_video']) ?>"
-                                        type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <?php else : ?>
-                                No video available
+                                <?php if($lesson['video_url']): ?>
+                                <a href="<?= $lesson['video_url'] ?>" target="_blank">View Video</a>
+                                <?php else: ?>
+                                No Video
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('admin/lesson/edit/' . $lesson['id_lesson']) ?>"
-                                    class="btn btn-primary btn-sm">
-                                    <i class="fas fa-edit"></i> Edit
-                                </a>
-                                <a href="<?= base_url('admin/lesson/delete/' . $lesson['id_lesson']) ?>"
+                                <a href="<?= base_url('/admin/lesson/edit/' . $lesson['id_lesson']) ?>"
+                                    class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                                <a href="<?= base_url('/admin/lesson/delete/' . $lesson['id_lesson']) ?>"
                                     class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Are you sure you want to delete this lesson?')">
-                                    <i class="fas fa-trash-alt"></i> Delete
-                                </a>
+                                    onclick="return confirm('Are you sure you want to delete this lesson?')"><i
+                                        class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
                         <?php else : ?>
                         <tr>
-                            <td colspan="7">No lessons found</td>
+                            <td colspan="6">No lessons found</td>
                         </tr>
                         <?php endif; ?>
                     </tbody>
@@ -73,5 +66,6 @@
             </div>
         </div>
     </div>
+
 </div>
 <?= $this->endSection() ?>
