@@ -75,7 +75,18 @@ class Home extends Controller
         return view('home/lesson/lesson', $data);
     }
     
+    public function detail_lesson()
+    {
+        $lessons = $this->lessonModel->findAll();
     
+        $data = [
+            'title' => 'Lesson Detail',
+            'lesson' => $lessons,
+        ];
+    
+        return view('home/lesson/detail_lesson', $data);
+    }
+
 
     public function detail_teacher($id)
 {

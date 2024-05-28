@@ -294,24 +294,25 @@ public function lesson()
 }
 
 
-    public function save_lesson()
-    {
-        $data = [
-            'title' => $this->request->getPost('title'),
-            'content' => $this->request->getPost('content'),
-            'id_course' => $this->request->getPost('id_course'),
-            'order' => $this->request->getPost('order'),
-            'video_url' => $this->request->getPost('video_url'),
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ];
+public function save_lesson()
+{
+    $data = [
+        'title' => $this->request->getPost('title'),
+        'content' => $this->request->getPost('content'),
+        'id_course' => $this->request->getPost('id_course'),
+        'order' => $this->request->getPost('order'),
+        'video_url' => $this->request->getPost('video_url'),
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
+    ];
 
-        if ($this->lessonModel->save($data)) {
-            return redirect()->to('/admin/lesson')->with('success', 'Lesson added successfully');
-        } else {
-            return redirect()->to('/admin/lesson/add')->with('error', 'Failed to add lesson. Please try again.');
-        }
+    if ($this->lessonModel->save($data)) {
+        return redirect()->to('/admin/lesson')->with('success', 'Lesson added successfully');
+    } else {
+        return redirect()->to('/admin/lesson/add')->with('error', 'Failed to add lesson. Please try again.');
     }
+}
+
 
     public function edit_lesson($id)
     {

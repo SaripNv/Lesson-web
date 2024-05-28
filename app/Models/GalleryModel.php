@@ -8,5 +8,5 @@ class GalleryModel extends Model
 {
     protected $table = 'gallery';
     protected $primaryKey = 'id_gallery';
-    protected $allowedFields = ['nama_foto', 'foto', 'deskripsi', 'tanggal_diambil'];
+    protected $allowedFields = ['nama_foto', 'foto', 'deskripsi'];
 }

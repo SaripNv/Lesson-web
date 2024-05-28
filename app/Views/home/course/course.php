@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $course['judul_course'] ?></h5>
                         <p class="card-text"><?= $course['teacher_name'] ?></p>
-                        <a href="<?= base_url('lesson') ?>" class="btn btn-primary">Enroll Now</a>
+                        <a href="<?= base_url('lesson') ?>" class="btn btn-primary">Click here</a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,1283 @@
+INFO - 2024-05-24 00:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:20:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-24 00:28:24 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 00:28:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 00:28:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 00:28:24 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 00:28:46 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 00:28:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 00:28:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 00:28:46 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-05-24 00:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:30:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:31:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 00:32:03 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 00:36:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:36:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 00:36:51 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 00:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 00:38:41 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 00:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:52:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:54:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 00:54:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:02:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:02:13 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+CRITICAL - 2024-05-24 01:02:27 --> ErrorException: Undefined variable $videoFileName
+in APPPATH\Controllers\AdminController.php on line 324.
+ 1 APPPATH\Controllers\AdminController.php(324): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $videoFileName', 'C:\\laragon\\www\\kursus\\app\\Controllers\\AdminController.php', 324)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->save_lesson()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-05-24 01:03:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:03:20 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:04:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:07:44 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:13:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:13:22 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:16:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:16:29 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:17:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:17:45 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:25:40 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:29:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:29:44 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:29:52 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:31:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:31:11 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:32:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-24 01:33:10 --> Exception: Serialization of 'CodeIgniter\HTTP\Files\UploadedFile' is not allowed
+in [no active file] on line 0.
+ 1 [internal function]: session_write_close()
+INFO - 2024-05-24 01:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-24 01:35:35 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:35:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:35:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:35:35 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-05-24 01:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-24 01:35:48 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:35:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:35:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:35:48 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-05-24 01:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:35:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-24 01:36:04 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:36:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:36:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:36:04 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:37:43 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:37:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:37:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:37:43 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:38:04 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:38:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:38:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:38:04 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:38:05 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:38:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:38:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:38:05 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:38:42 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:38:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:38:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:38:42 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:42:43 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:42:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:42:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:42:43 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:42:45 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:42:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:42:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:42:45 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:43:01 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:43:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:43:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:43:01 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:43:02 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:43:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:43:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:43:02 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:43:28 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:43:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:43:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:43:28 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+ERROR - 2024-05-24 01:43:29 --> mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause' in C:\laragon\www\kursus\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\kursus\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`...', 0)
+#1 C:\laragon\www\kursus\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`...')
+#2 C:\laragon\www\kursus\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`...')
+#3 C:\laragon\www\kursus\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`...', Array, false)
+#4 C:\laragon\www\kursus\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\kursus\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\kursus\app\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\kursus\system\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+#8 C:\laragon\www\kursus\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\kursus\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\kursus\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\kursus\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2024-05-24 01:43:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:43:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+CRITICAL - 2024-05-24 01:43:29 --> [Caused by] mysqli_sql_exception: Unknown column 'lesson.order' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lesson`.*, `course`.`judul_course` as `course_title`
+FROM `lesson`
+JOIN `course` ON `course`.`id_course` = `lesson`.`id_course`
+ORDER BY `lesson`.`order` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\AdminController.php(278): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\AdminController->lesson()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\kursus\\public\\index.php')
+INFO - 2024-05-24 01:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-24 01:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
