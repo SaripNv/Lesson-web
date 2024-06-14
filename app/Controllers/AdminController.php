@@ -72,10 +72,10 @@ public function save_user()
 
     // Ambil data dari form
     $userData = [
-        'username' => $this->request->getPost('username'),
-        'email' => $this->request->getPost('email'),
-        'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-        'role' => $this->request->getPost('role')
+        'username' => $this->request->getVar('username'),
+        'email' => $this->request->getVar('email'),
+        'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+        'role' => $this->request->getVar('role')
     ];
 
     // Simpan data pengguna baru ke dalam database
@@ -122,9 +122,9 @@ public function update_user($id)
 
     // Ambil data dari form
     $userData = [
-        'username' => $this->request->getPost('username'),
-        'email' => $this->request->getPost('email'),
-        'role' => $this->request->getPost('role')
+        'username' => $this->request->getVar('username'),
+        'email' => $this->request->getVar('email'),
+        'role' => $this->request->getVar('role')
     ];
 
     // Perbarui data pengguna berdasarkan ID
@@ -199,8 +199,8 @@ public function save_course()
     }
 
     $courseData = [
-        'judul_course' => $this->request->getPost('judul_course'),
-        'id_teacher' => $this->request->getPost('id_teacher'), // Mengambil id_teacher dari form
+        'judul_course' => $this->request->getVar('judul_course'),
+        'id_teacher' => $this->request->getVar('id_teacher'), // Mengambil id_teacher dari form
     ];
 
     $courseModel = new CourseModel();
@@ -241,8 +241,8 @@ public function update_course($id)
     }
 
     $courseData = [
-        'judul_course' => $this->request->getPost('judul_course'),
-        'id_teacher' => $this->request->getPost('id_teacher'), // Mengambil id_teacher dari form
+        'judul_course' => $this->request->getVar('judul_course'),
+        'id_teacher' => $this->request->getVar('id_teacher'), // Mengambil id_teacher dari form
     ];
 
     $courseModel = new CourseModel();
@@ -296,22 +296,45 @@ public function lesson()
 
 public function save_lesson()
 {
-    $data = [
-        'title' => $this->request->getPost('title'),
-        'content' => $this->request->getPost('content'),
-        'id_course' => $this->request->getPost('id_course'),
-        'order' => $this->request->getPost('order'),
-        'video_url' => $this->request->getPost('video_url'),
-        'created_at' => date('Y-m-d H:i:s'),
-        'updated_at' => date('Y-m-d H:i:s')
+    // Definisikan aturan validasi
+    $validationRules = [
+        'title' => 'required',
+        'content' => 'required',
+        'id_course' => 'required|integer',
+        'file_video' => 'uploaded[file_video]|max_size[file_video,51200]|ext_in[file_video,mp4,avi,mov]',
     ];
 
-    if ($this->lessonModel->save($data)) {
-        return redirect()->to('/admin/lesson')->with('success', 'Lesson added successfully');
+    if (!$this->validate($validationRules)) {
+        return redirect()->to('/admin/lesson/add')->withInput()->with('validation', $this->validator);
+    }
+
+    // Ambil file video dari request
+    $video = $this->request->getFile('file_video');
+
+    if ($video->isValid() && !$video->hasMoved()) {
+        $newName = $video->getRandomName();
+        $video->move(ROOTPATH . 'public/uploads', $newName);
+
+        // Persiapkan data untuk disimpan
+        $lessonData = [
+            'title' => $this->request->getVar('title'),
+            'content' => $this->request->getVar('content'),
+            'id_course' => $this->request->getVar('id_course'),
+            'file_video' => $newName, // Simpan nama baru dari file video
+        ];
+
+        // Simpan data lesson
+        $lessonModel = new LessonModel();
+        if ($lessonModel->save($lessonData)) {
+            return redirect()->to('/admin/lesson')->with('success', 'Pelajaran berhasil ditambahkan.');
+        } else {
+            return redirect()->to('/admin/lesson/add')->withInput()->with('error', 'Gagal menyimpan pelajaran. Silakan coba lagi.');
+        }
     } else {
-        return redirect()->to('/admin/lesson/add')->with('error', 'Failed to add lesson. Please try again.');
+        return redirect()->to('/admin/lesson/add')->withInput()->with('error', 'Gagal mengunggah video. Silakan coba lagi.');
     }
 }
+
 
 
     public function edit_lesson($id)
@@ -339,12 +362,10 @@ public function save_lesson()
         }
 
         $data = [
-            'title' => $this->request->getPost('title'),
-            'content' => $this->request->getPost('content'),
-            'id_course' => $this->request->getPost('id_course'),
-            'order' => $this->request->getPost('order'),
-            'video_url' => $this->request->getPost('video_url'),
-            'updated_at' => date('Y-m-d H:i:s')
+            'title' => $this->request->getVar('title'),
+            'content' => $this->request->getVar('content'),
+            'id_course' => $this->request->getVar('id_course'),
+            'file_video' => $this->request->getVar('file_video')
         ];
 
         if ($this->lessonModel->update($id, $data)) {
@@ -407,10 +428,10 @@ public function save_lesson()
             $foto_guru->move(ROOTPATH . 'public/assets/img', $newName);
     
             $teacherData = [
-                'nama' => $this->request->getPost('nama'),
-                'email' => $this->request->getPost('email'),
-                'bidang_keahlian' => $this->request->getPost('bidang_keahlian'),
-                'deskripsi' => $this->request->getPost('deskripsi'),
+                'nama' => $this->request->getVar('nama'),
+                'email' => $this->request->getVar('email'),
+                'bidang_keahlian' => $this->request->getVar('bidang_keahlian'),
+                'deskripsi' => $this->request->getVar('deskripsi'),
                 'foto_guru' => $newName
             ];
     
@@ -463,10 +484,10 @@ public function save_lesson()
     }
 
     $teacherData = [
-        'nama' => $this->request->getPost('nama'),
-        'email' => $this->request->getPost('email'),
-        'bidang_keahlian' => $this->request->getPost('bidang_keahlian'),
-        'deskripsi' => $this->request->getPost('deskripsi'),
+        'nama' => $this->request->getVar('nama'),
+        'email' => $this->request->getVar('email'),
+        'bidang_keahlian' => $this->request->getVar('bidang_keahlian'),
+        'deskripsi' => $this->request->getVar('deskripsi'),
         'foto_guru' => $foto_guru_name
     ];
 
@@ -478,25 +499,25 @@ public function save_lesson()
 }
 public function delete_teacher($id)
 {
-    // Cari data guru berdasarkan ID
+
     $teacher = $this->teacherModel->find($id);
 
-    // Jika data guru tidak ditemukan, kembalikan ke halaman admin dengan pesan error
+
     if (!$teacher) {
         return redirect()->to('/admin/teacher')->with('error', 'Teacher not found.');
     }
 
-    // Hapus foto guru jika ada
+ 
     if (!empty($teacher['foto_guru'])) {
         unlink(ROOTPATH . 'public/assets/img/' . $teacher['foto_guru']);
     }
 
-    // Hapus data guru dari database
+    
     if ($this->teacherModel->delete($id)) {
-        // Jika berhasil, kembalikan ke halaman admin dengan pesan sukses
+ 
         return redirect()->to('/admin/teacher')->with('success', 'Teacher deleted successfully.');
     } else {
-        // Jika gagal, kembalikan ke halaman admin dengan pesan error
+        
         return redirect()->to('/admin/teacher')->with('error', 'Failed to delete teacher. Please try again.');
     }
 }
@@ -538,10 +559,9 @@ public function save_gallery()
         $foto->move(ROOTPATH . 'public/assets/gallery', $newName);
 
         $galleryData = [
-            'nama_foto' => $this->request->getPost('nama_foto'),
+            'nama_foto' => $this->request->getVar('nama_foto'),
             'foto' => $newName,
-            'deskripsi' => $this->request->getPost('deskripsi'),
-            'tanggal_diambil' => date('Y-m-d') // Tanggal diambil sekarang
+            'deskripsi' => $this->request->getVar('deskripsi')
         ];
 
         if ($this->galleryModel->insert($galleryData)) {
@@ -599,9 +619,9 @@ public function update_gallery($id)
     }
 
     $galleryData = [
-        'nama_foto' => $this->request->getPost('nama_foto'),
+        'nama_foto' => $this->request->getVar('nama_foto'),
         'foto' => $foto_name,
-        'deskripsi' => $this->request->getPost('deskripsi'),
+        'deskripsi' => $this->request->getVar('deskripsi'),
     ];
 
     if ($this->galleryModel->update($id, $galleryData)) {

@@ -1,5 +1,4 @@
 <?php
-
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -51,15 +50,11 @@ $routes->get('admin/gallery/delete/(:num)', 'AdminController::delete_gallery/$1'
 // Routes for teacher detail
 $routes->get('detail_teacher/(:num)', 'Home::detail_teacher/$1');
 
-// Routes for course
+// Routes for courses and course lessons
 $routes->get('course', 'Home::course');
-$routes->get('course/(:num)', 'Home::detail_course/$1');
+$routes->get('course/(:num)/lessons', 'Home::course_lessons/$1'); 
+$routes->get('lesson/view/(:num)', 'Home::view_lesson/$1');
 
-// Routes for lessons in the Home controller
-$routes->get('lesson', 'Home::lesson');
-$routes->get('lesson/(:num)', 'Home::detail_lesson/$1');
-
-$routes->get('detail_lesson','Home::detail_lesson');
 
 // Add routes for authentication
 $routes->get('register', 'Home::register');

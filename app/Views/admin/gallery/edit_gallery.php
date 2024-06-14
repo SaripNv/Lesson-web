@@ -5,7 +5,8 @@
 <?= $this->section('content') ?>
 <div class="container">
     <h2>Edit Photo</h2>
-    <form action="<?= base_url('admin/gallery/update/' . $photo['id']) ?>" method="post" enctype="multipart/form-data">
+    <form action="<?= base_url('admin/gallery/update/' . $photo['id_gallery']) ?>" method="post"
+        enctype="multipart/form-data">
         <div class="form-group">
             <label for="nama_foto">Photo Name:</label>
             <input type="text" class="form-control" id="nama_foto" name="nama_foto" value="<?= $photo['nama_foto'] ?>"

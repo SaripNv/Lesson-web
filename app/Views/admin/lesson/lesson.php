@@ -1,5 +1,3 @@
-<!-- app/Views/home/lesson/lesson.php -->
-
 <?= $this->extend('template/dashboard') ?>
 
 <?= $this->section('content') ?>
@@ -26,7 +24,6 @@
                             <th>No</th>
                             <th>Title</th>
                             <th>Course</th>
-                            <th>Order</th>
                             <th>Video</th>
                             <th>Action</th>
                         </tr>
@@ -38,10 +35,13 @@
                             <td><?= $key + 1 ?></td>
                             <td><?= $lesson['title'] ?></td>
                             <td><?= $lesson['course_title'] ?></td>
-                            <td><?= $lesson['order'] ?></td>
                             <td>
-                                <?php if($lesson['video_url']): ?>
-                                <a href="<?= $lesson['video_url'] ?>" target="_blank">View Video</a>
+                                <?php if($lesson['file_video']): ?>
+                                <video width="200" controls>
+                                    <source src="<?= base_url('public/uploads/' . $lesson['file_video']) ?>"
+                                        type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                                 <?php else: ?>
                                 No Video
                                 <?php endif; ?>

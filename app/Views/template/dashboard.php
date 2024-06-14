@@ -39,6 +39,7 @@
             <li class="nav-item"><a class="nav-link" href="<?= base_url('admin/user'); ?>">Users</a></li>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('admin/teacher'); ?>">Teacher</a></li>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('admin/gallery'); ?>">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?= base_url('/'); ?>">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('logout'); ?>">Logout</a></li>
         </ul>
     </div>

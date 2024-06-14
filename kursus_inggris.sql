@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 28, 2024 at 03:14 PM
+-- Generation Time: Jun 14, 2024 at 08:48 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -30,19 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `course` (
   `id_course` int NOT NULL,
   `judul_course` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `id_teacher` int DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
+  `id_teacher` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`id_course`, `judul_course`, `id_teacher`, `created_at`, `updated_at`) VALUES
-(1, 'Inggris I', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 'Inggris II', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 'Inggris III', 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `course` (`id_course`, `judul_course`, `id_teacher`) VALUES
+(1, 'Inggris I', 1),
+(3, 'Inggris II', 2),
+(4, 'Inggris III', 3);
 
 -- --------------------------------------------------------
 
@@ -64,8 +62,7 @@ CREATE TABLE `gallery` (
 INSERT INTO `gallery` (`id_gallery`, `nama_foto`, `foto`, `deskripsi`) VALUES
 (1, 'course', '1715124200_06b6c6adc83b11f9f691.jpg', 'a'),
 (2, 'english', '1715124219_bedab6e48ac6e000caff.jpeg', 'a'),
-(3, 'example', '1715125181_514f2c79344c67412b9c.jpeg', 'a'),
-(5, 'example1', '1715743290_4201e30db831616dd79f.jpg', 'test');
+(3, 'example', '1715125181_514f2c79344c67412b9c.jpeg', 'a');
 
 -- --------------------------------------------------------
 
@@ -79,20 +76,18 @@ CREATE TABLE `lesson` (
   `content` text,
   `id_course` int DEFAULT NULL,
   `order` int DEFAULT NULL,
-  `video_url` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `file_video` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`id_lesson`, `title`, `content`, `id_course`, `order`, `video_url`, `created_at`, `updated_at`) VALUES
-(1, 'introduction', '', 1, 1, 'https://youtu.be/P4wgwrAIFfA?si=GWxrM60Q9hVyVNfD', '2024-05-28 07:59:36', '2024-05-28 07:59:36'),
-(2, 'grammar I', '', 1, 2, 'https://youtu.be/k2_2H3qT9q0?si=wjvc-62R5mdGikw7', '2024-05-28 08:00:05', '2024-05-28 08:00:05'),
-(3, 'grammar II', '', 1, 3, 'https://youtu.be/P4wgwrAIFfA?si=GWxrM60Q9hVyVNfD', '2024-05-28 08:00:22', '2024-05-28 08:00:58'),
-(4, 'grammar III', '', 1, 4, 'https://youtu.be/P4wgwrAIFfA?si=GWxrM60Q9hVyVNfD', '2024-05-28 08:00:42', '2024-05-28 08:00:42');
+INSERT INTO `lesson` (`id_lesson`, `title`, `content`, `id_course`, `order`, `file_video`) VALUES
+(5, 'Basic English Fundamentals', 'pada tahap ini', 1, 1, '1718334634_95c86f9373cdb1b4b480.mp4'),
+(6, 'Essential Vocabulary', 'pada tahap ke 2', 1, 2, '1718338543_3fdd706e9a7cd1c7f501.mp4'),
+(7, 'Mastering Tenses and Grammar', 'pada tahap 1', 3, 1, '1718338612_d1f3694f56c8d04b6843.mp4'),
+(8, 'Mastery of Complex Language Aspects', 'pada tahap selanjutnya', 4, NULL, '1718353587_2ec5d15fcf87a8edcd72.mp4');
 
 -- --------------------------------------------------------
 
@@ -129,18 +124,17 @@ CREATE TABLE `user` (
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('admin','teacher','user') NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `role` enum('admin','teacher','user') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'sarip', 'sarip0747@gmail.com', '$2y$10$ANFsvdxgYgf00tGDUU5PfeL9Bcf1u.0s6eYcbLl49xndrbcU5aGii', 'admin', '2024-04-14 01:40:02', '2024-04-14 01:40:02'),
-(4, 'core', 'core7843@gmail.com', '$2y$10$OcHDUHisluRTtgsY5tB/UOlUKKRCH4/9jRkCW3W7PzU9z8SJYK2ce', 'teacher', '2024-04-16 12:55:53', '2024-04-16 12:55:53');
+INSERT INTO `user` (`id_user`, `username`, `email`, `password`, `role`) VALUES
+(4, 'core', 'core7843@gmail.com', '$2y$10$OcHDUHisluRTtgsY5tB/UOlUKKRCH4/9jRkCW3W7PzU9z8SJYK2ce', 'teacher'),
+(5, 'admin', 'admin2105@gmail.com', '$2y$10$G5y/rDqXLNN9FuevmebJou7UEoq86/fZwowKSGjZyOYnHzjqay55O', 'admin'),
+(6, 'sarip', 'sarip0747@gmail.com', '$2y$10$vT1.o5tTk/Ab5iZnY4xNa.ECoU8lrFC.weyP2fAhIx9HcUxERg1pW', 'user');
 
 --
 -- Indexes for dumped tables
@@ -197,7 +191,7 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id_lesson` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_lesson` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `teacher`
@@ -209,7 +203,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

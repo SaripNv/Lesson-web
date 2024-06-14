@@ -1,7 +1,7 @@
+<!-- app/Views/home/course/course.php -->
 <?= $this->extend('template/home') ?>
 
 <?= $this->section('content') ?>
-<!-- Bagian dengan daftar kursus -->
 <section class="course">
     <div class="container">
         <div class="row">
@@ -12,7 +12,8 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $course['judul_course'] ?></h5>
                         <p class="card-text"><?= $course['teacher_name'] ?></p>
-                        <a href="<?= base_url('lesson') ?>" class="btn btn-primary">Click here</a>
+                        <a href="<?= base_url('course/' . $course['id_course'] . '/lessons') ?>"
+                            class="btn btn-primary">View Lessons</a>
                     </div>
                 </div>
             </div>

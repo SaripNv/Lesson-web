@@ -8,7 +8,7 @@ class LessonModel extends Model
 {
     protected $table = 'lesson';
     protected $primaryKey = 'id_lesson';
-    protected $allowedFields = ['title', 'content', 'id_course', 'order', 'video_url', 'created_at', 'updated_at'];
+    protected $allowedFields = ['title', 'content', 'id_course', 'file_video'];
 
     public function getLesson($id_lesson)
     {

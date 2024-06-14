@@ -1,7 +1,7 @@
-<?= $this->extend('template/home') ?>
+<?=$this->extend('template/home')?>
 
 <!-- Define the content section -->
-<?= $this->section('content') ?>
+<?=$this->section('content')?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
@@ -61,40 +61,14 @@
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Album example</h1>
-                    <p class="lead text-body-secondary">Something short and leading about the collection below—its
-                        contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply
-                        skip over it entirely.</p>
+                    <h1 class="fw-light">ENGLISH SKILL LESSON</h1>
+                    <p class="lead text-body-secondary">Unlock Your Full Potential with English Skill Lesson – Where
+                        Learning is an Adventure!</p>
                     <p>
-                        <a href="<?= base_url('course')?>" class="btn btn-primary my-2">Main call to action</a>
-                        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                        <a href="<?=base_url('course')?>" class="btn btn-primary my-2">Course</a>
+
                     </p>
                 </div>
-            </div>
-        </section>
-    </main>
-    <!-- Slider Section -->
-    <main>
-        <!-- Slider Section -->
-        <section class="py-5 text-center container">
-            <div id="slider" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <?php foreach ($gallery as $key => $photo) : ?>
-                    <div class="carousel-item <?= $key === 0 ? 'active' : '' ?>">
-                        <img src="<?= base_url('assets/gallery/' . $photo['foto']) ?>" class="d-block w-100"
-                            style="object-fit: cover; height: 400px;" alt="Slider Image <?= $key + 1 ?>">
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </section>
     </main>
@@ -103,71 +77,101 @@
         <div class="album py-5 bg-body-tertiary">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <?php foreach ($teachers as $teacher) : ?>
+                    <?php foreach ($teachers as $teacher): ?>
                     <div class="col">
                         <div class="card shadow-sm">
-                            <?php if (!empty($teacher['foto_guru'])) : ?>
-                            <img src="<?= base_url('assets/img/' . $teacher['foto_guru']) ?>"
+                            <?php if (!empty($teacher['foto_guru'])): ?>
+                            <img src="<?=base_url('assets/img/' . $teacher['foto_guru'])?>"
                                 class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                alt="<?= $teacher['nama'] ?>">
-                            <?php else : ?>
-                            <img src="<?= base_url('path_to_your_default_image') ?>"
+                                alt="<?=$teacher['nama']?>">
+                            <?php else: ?>
+                            <img src="<?=base_url('path_to_your_default_image')?>"
                                 class="bd-placeholder-img card-img-top" width="100%" height="225" alt="No Photo">
-                            <?php endif; ?>
+                            <?php endif;?>
                             <div class="card-body">
                                 <!-- Menempatkan judul kartu di tengah -->
-                                <h5 class="card-title text-center"><?= $teacher['nama'] ?></h5>
+                                <h5 class="card-title text-center"><?=$teacher['nama']?></h5>
                                 <p class="card-text">
                                     <?php
-                                // Batasi deskripsi menjadi maksimal 100 karakter
-                                $deskripsi = $teacher['deskripsi'];
-                                if (strlen($deskripsi) > 100) {
-                                    $deskripsi = substr($deskripsi, 0, 100) . "...";
-                                    echo $deskripsi;
-                                } else {
-                                    echo $deskripsi;
-                                }
-                                ?>
+// Batasi deskripsi menjadi maksimal 100 karakter
+$deskripsi = $teacher['deskripsi'];
+if (strlen($deskripsi) > 100) {
+    $deskripsi = substr($deskripsi, 0, 100) . "...";
+    echo $deskripsi;
+} else {
+    echo $deskripsi;
+}
+?>
                                 </p>
                                 <div class="text-center">
                                     <!-- Link View diarahkan ke halaman detail guru -->
-                                    <a href="<?= base_url('detail_teacher/' . $teacher['id_teacher']) ?>"
+                                    <a href="<?=base_url('detail_teacher/' . $teacher['id_teacher'])?>"
                                         class="btn btn-sm btn-outline-secondary">View</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <?php endforeach; ?>
+                    <?php endforeach;?>
                 </div>
             </div>
         </div>
     </main>
-
-
-
-
-    <main>
-        <section class="py-5 bg-primary text-white">
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- Menyelaraskan teks dan tombol ke tengah secara vertikal -->
-                    <div class="col-md-6">
-                        <h2>Mulai Belajar</h2>
-                        <p>Ini adalah teks yang berada di sisi kiri dari background menarik.</p>
-                        <!-- Mengubah tombol menjadi tautan (link) -->
-                        <a href="<?= base_url('course') ?>" class="btn btn-light">Get Started</a>
-                    </div>
+    <!--About-->
+    <div class="container">
+        <div class="d-flex">
+            <div class="col-3 d-flex justify-content-center">
+                <h1>Our Journey:English Skill Lesson</h1>
+            </div>
+            <div class="col-8">
+                <div class="contact-info">
+                    English Skill Lesson was born from a shared vision among a group of passionate educators and
+                    language enthusiasts, specifically a dedicated team of students from the University of Subang.
+                    Recognizing the growing need for accessible, high-quality English education, we aimed to create a
+                    platform that transcends traditional classrooms.
+                    Our journey began in a small café where we brainstormed the possibilities of using technology to
+                    revolutionize English learning. With backgrounds in teaching, linguistics, and digital innovation,
+                    we crafted a curriculum combining interactive lessons, real-life scenarios, and personalized
+                    feedback.
+                    Despite challenges in technology integration and design, our dedication kept us moving forward.
+                    After a year of hard work, we launched English Skill Lesson, starting with a small group of beta
+                    users. Their feedback helped us refine the platform.
+                    Today, English Skill Lesson is a thriving community of global learners. We continue to innovate and
+                    adapt, inspired by our students' success stories. Join us as we unlock the full potential of English
+                    language learners everywhere.</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+        <!-- Slider Section -->
+        <main>
+            <!-- Slider Section -->
+            <section class="py-5 album bg-body-tertiary text-center container ">
+                <div id="slider" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php foreach ($gallery as $key => $photo): ?>
+                        <div class="carousel-item <?=$key === 0 ? 'active' : ''?>">
+                            <img src="<?=base_url('assets/gallery/' . $photo['foto'])?>" class="d-block w-100"
+                                style="object-fit: cover; height: 400px;" alt="Slider Image <?=$key + 1?>">
+                        </div>
+                        <?php endforeach;?>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </section>
+        </main>
 
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
-<?= $this->endSection() ?>
+<?=$this->endSection()?>

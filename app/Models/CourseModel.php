@@ -8,7 +8,7 @@ class CourseModel extends Model
 {
     protected $table = 'course';
     protected $primaryKey = 'id_course';
-    protected $allowedFields = ['judul_course', 'id_teacher', 'created_at', 'updated_at'];
+    protected $allowedFields = ['judul_course', 'id_teacher'];
 
     public function getCourse($id_course)
     {

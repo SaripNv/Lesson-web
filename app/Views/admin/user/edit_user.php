@@ -16,6 +16,12 @@
             <!-- Tambahkan pesan kesalahan untuk input email jika diperlukan -->
         </div>
         <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" value="<?= $user['password'] ?>"
+                required>
+            <!-- Tambahkan pesan kesalahan untuk input email jika diperlukan -->
+        </div>
+        <div class="form-group">
             <label for="role">Role:</label>
             <select class="form-control" id="role" name="role" required>
                 <option value="admin" <?= ($user['role'] === 'admin') ? 'selected' : '' ?>>Admin</option>
@@ -27,4 +33,4 @@
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
-<?= $this->endSection() ?> 
+<?= $this->endSection() ?>
